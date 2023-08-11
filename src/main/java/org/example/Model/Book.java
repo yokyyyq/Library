@@ -15,4 +15,23 @@ public class Book {
         this.genre = genre;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public int getPublicationYear() {
+        return publicationYear;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
 }
