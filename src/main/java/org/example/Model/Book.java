@@ -1,8 +1,10 @@
 package org.example.Model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Book {
+    private LocalDate publicationDate;
     private String title;
     private List<Author> authors; // Если у книги может быть несколько авторов
     private int publicationYear;
@@ -37,8 +39,8 @@ public class Book {
         this.authors = authors;
     }
 
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
+    public LocalDate getPublicationDate() {
+        return publicationDate;
     }
 
     public void setGenre(String genre) {
@@ -47,5 +49,9 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public void setPublicationDate(LocalDate publicationDate) {
+        this.publicationDate = publicationDate;
     }
 }

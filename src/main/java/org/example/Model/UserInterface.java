@@ -4,12 +4,15 @@ import org.example.Model.LibraryService;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class UserInterface {
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private LibraryService libraryService;
 
-    public UserInterface(LibraryService libraryService) {
+    public UserInterface() {
         this.libraryService = libraryService;
     }
 
@@ -39,21 +42,27 @@ public class UserInterface {
         System.out.print("Введите название книги: ");
         String title = reader.readLine();
 
-        System.out.print("Введите год публикации: ");
-        int year = Integer.parseInt(reader.readLine());
+        System.out.print("Введите дату публикации (в формате dd.MM.yyyy): ");
+        String dateString = reader.readLine();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate publicationDate;
+        try {
+            publicationDate = LocalDate.parse(dateString, formatter);
+        } catch (DateTimeParseException e) {
+            System.out.println("Неверный формат даты. Пожалуйста, введите снова.");
+            return;
+        }
 
         System.out.print("Введите жанр: ");
         String genre = reader.readLine();
-
-        System.out.print("Введите ISBN: ");
-        String isbn = reader.readLine();
 
         System.out.print("Введите имя автора: ");
         String firstName = reader.readLine();
 
         System.out.print("Введите фамилию автора: ");
         String lastName = reader.readLine();
-        libraryService.addBook(title, year, genre, isbn, firstName, lastName);
+        libraryService.addBook();
+
         System.out.println("Книга успешно добавлена!");
 
     }
