@@ -14,4 +14,5 @@ public class Book {
         this.publicationYear = publicationYear;
         this.genre = genre;
     }
+
 }
