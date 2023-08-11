@@ -1,30 +1,20 @@
 package org.example.Model;
 
+import java.util.List;
+
 public class Book {
     private String title;
-    private Author author;
-    private String isbn;
+    private List<Author> authors; // Если у книги может быть несколько авторов
     private int publicationYear;
     private String genre;
-
-    public Book(String title, Author author, String isbn, int publicationYear, String genre) {
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.publicationYear = publicationYear;
-        this.genre = genre;
-    }
+    private String isbn;
 
     public String getTitle() {
         return title;
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public String getIsbn() {
-        return isbn;
+    public List<Author> getAuthors() {
+        return authors;
     }
 
     public int getPublicationYear() {
@@ -33,5 +23,29 @@ public class Book {
 
     public String getGenre() {
         return genre;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
