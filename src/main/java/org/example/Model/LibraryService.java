@@ -31,4 +31,8 @@ public class LibraryService {
 
         library.addBook(book);
     }
+
+    public List<Book> showAllBooks() {
+        return library.getBooks();
+    }
 }

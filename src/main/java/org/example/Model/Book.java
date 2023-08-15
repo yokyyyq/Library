@@ -6,10 +6,8 @@ import java.util.List;
 public class Book {
     private LocalDate publicationDate;
     private String title;
-    private List<Author> authors; // Если у книги может быть несколько авторов
-    private int publicationYear;
+    private List<Author> authors;
     private String genre;
-    private String isbn;
 
     public String getTitle() {
         return title;
@@ -19,16 +17,8 @@ public class Book {
         return authors;
     }
 
-    public int getPublicationYear() {
-        return publicationYear;
-    }
-
     public String getGenre() {
         return genre;
-    }
-
-    public String getIsbn() {
-        return isbn;
     }
 
     public void setTitle(String title) {
@@ -47,9 +37,6 @@ public class Book {
         this.genre = genre;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
 
     public void setPublicationDate(LocalDate publicationDate) {
         this.publicationDate = publicationDate;

@@ -6,12 +6,10 @@ import java.util.Date;
 public class Author {
     private String firstName;
     private String lastName;
-    private Date birthDate; // Вы можете использовать LocalDate из Java 8+
+    private Date birthDate;
     private String biography;
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public String getFirstName() { return firstName;}
 
     public String getLastName() {
         return lastName;
