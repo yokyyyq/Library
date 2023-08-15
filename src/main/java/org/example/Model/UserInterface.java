@@ -12,7 +12,7 @@ public class UserInterface {
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private LibraryService libraryService;
 
-    public UserInterface() {
+    public UserInterface(LibraryService libraryService) {
         this.libraryService = libraryService;
     }
 
@@ -61,7 +61,7 @@ public class UserInterface {
 
         System.out.print("Введите фамилию автора: ");
         String lastName = reader.readLine();
-        libraryService.addBook();
+        libraryService.addBook(title, genre, publicationDate, firstName, lastName);
 
         System.out.println("Книга успешно добавлена!");
 

@@ -1,13 +1,12 @@
 package org.example;
 
-import org.example.Model.Author;
-import org.example.Model.Book;
-import org.example.Model.Library;
-import org.example.Model.UserInterface;
+import org.example.Model.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        UserInterface userInterface=new UserInterface();
+        Library library = new Library();
+        LibraryService libraryService = new LibraryService(library);
+        UserInterface userInterface = new UserInterface(libraryService);
         userInterface.start();
     }
 }
